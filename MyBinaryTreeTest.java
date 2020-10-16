@@ -42,4 +42,17 @@ public class MyBinaryTreeTest {
 
 	}
 
+	/**
+	 * 
+	 * uc3
+	 */
+	@Test
+	public void givenNumberWhenSearchToBSTShouldReturnTrueIfPresent() {
+		MyBinaryTree<Integer> myBinaryTree = new MyBinaryTree<>();
+		myBinaryTree.add(56);
+		myBinaryTree.add(30);
+		myBinaryTree.add(70);
+		Assert.assertEquals(true, myBinaryTree.search(70));
+	}
+
 }

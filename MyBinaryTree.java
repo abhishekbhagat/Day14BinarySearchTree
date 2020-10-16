@@ -29,4 +29,19 @@ public class MyBinaryTree<T extends Comparable<T>> {
 		else
 			return 1 + calculateSizeOfBinarySearchTree(root.left) + calculateSizeOfBinarySearchTree(root.right);
 	}
+
+	public boolean search(T key) {
+		return searchParticularValueInBinaryTree(root, key);
+	}
+
+	public boolean searchParticularValueInBinaryTree(MyBinaryNode<T> root, T key) {
+		if (root == null)
+			return false;
+		if (root.data.compareTo(key) == 0)
+			return true;
+		else if (root.data.compareTo(key) > 0)
+			return searchParticularValueInBinaryTree(root.left, key);
+		else
+			return searchParticularValueInBinaryTree(root.right, key);
+	}
 }
